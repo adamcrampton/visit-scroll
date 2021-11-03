@@ -5,6 +5,7 @@ A simple Bash script + Selenium test to visit a URL and scroll to specified elem
 1. Clone this repository and run `npm install`.
 2. Update the `endpoint` constant value in `tests\test.js` to the URL you would like the browser to visit.
 3. Update the `elementId` constant value in `tests\test.js` to the element ID you would like the browser to scroll to.
+4. Adjust emulation settings on lines 12 - 27, or comment these lines out for regular desktop display.
 
 ### Prerequisites
 * Node.js - [Download](https://nodejs.org/en/download/)
