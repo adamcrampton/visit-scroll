@@ -8,6 +8,24 @@ const elementId = 'platform';
 // Test logic.
 async function launch() {
     let driver = await new Builder().forBrowser('chrome').build();
+
+    // Set browser options.
+    const pageCdpConnection = await driver.createCDPConnection('page');
+
+    // iPhone X.
+    const metrics = {
+        width: 375,
+        height: 812,
+        deviceScaleFactor: 50,
+        mobile: true,
+    };
+
+    await pageCdpConnection.execute(
+        'Emulation.setDeviceMetricsOverride',
+        1,
+        metrics
+    );
+
     // Fetch page.
     await driver.get(endpoint);
 
